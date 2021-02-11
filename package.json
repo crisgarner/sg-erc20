@@ -1,0 +1,26 @@
+{
+	"name": "grupo-de-estudio",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"devDependencies": {
+		"@nomiclabs/hardhat-ethers": "^2.0.0",
+		"@nomiclabs/hardhat-waffle": "^2.0.0",
+		"@types/mocha": "^8.2.0",
+		"chai": "^4.2.0",
+		"dotenv": "^8.2.0",
+		"ethereum-waffle": "^3.0.0",
+		"ethers": "^5.0.30",
+		"hardhat": "^2.0.9"
+	},
+	"scripts": {
+		"test": "npx hardhat test ",
+		"compile": "npx hardhat compile",
+		"deploy": "npx hardhat deploy"
+	},
+	"dependencies": {
+		"hardhat-deploy": "^0.7.0-beta.44",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.1.5"
+	}
+}
