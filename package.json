@@ -11,7 +11,8 @@
 		"dotenv": "^8.2.0",
 		"ethereum-waffle": "^3.0.0",
 		"ethers": "^5.0.30",
-		"hardhat": "^2.0.9"
+		"hardhat": "^2.0.9",
+		"hardhat-deploy": "^0.7.0-beta.47"
 	},
 	"scripts": {
 		"test": "npx hardhat test ",
@@ -19,7 +20,7 @@
 		"deploy": "npx hardhat deploy"
 	},
 	"dependencies": {
-		"hardhat-deploy": "^0.7.0-beta.44",
+		"@openzeppelin/contracts": "^3.4.0",
 		"ts-node": "^9.1.1",
 		"typescript": "^4.1.5"
 	}

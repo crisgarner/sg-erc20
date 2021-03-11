@@ -3,13 +3,10 @@ import { ethers } from "hardhat";
 const { expect } = require("chai");
 
 describe("My token", function () {
-	it("Should return the new greeting once it's changed", async function () {
+	it("Should mint tokens", async function () {
 		const [owner, addr1] = await ethers.getSigners();
 		const MyToken = await ethers.getContractFactory("MyToken");
-		const mytoken = await MyToken.deploy(
-			"0x43a0d4e75d8687741a3caf46a490d3a2222afaff",
-			ethers.utils.parseEther("1000")
-		);
+		const mytoken = await MyToken.deploy(ethers.utils.parseEther("1000"));
 
 		await mytoken.deployed();
 
@@ -17,7 +14,7 @@ describe("My token", function () {
 		expect(await mytoken.symbol()).to.equal("MYT");
 		expect(await mytoken.decimals()).to.equal(18);
 		expect(await mytoken.totalSupply()).to.equal(ethers.utils.parseEther("1000"));
-		await mytoken.connect(addr1).mint(ethers.utils.parseEther("1"));
+		await mytoken.connect(owner).mint(await addr1.getAddress(), ethers.utils.parseEther("1"));
 		expect(await mytoken.totalSupply()).to.equal(ethers.utils.parseEther("1001"));
 		expect(await mytoken.balanceOf("0x43a0d4e75d8687741a3caf46a490d3a2222afaff")).to.equal(
 			ethers.utils.parseEther("1000")
